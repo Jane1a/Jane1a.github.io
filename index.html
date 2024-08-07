@@ -3,27 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="todo-list.css">
-    <title> To do list</title>
+    <title>Your meal is waiting for you</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body> 
-    <p>Todo List</p>
+<body>
 
-    <div class="todo-input-grid ">
-        <input type="text" placeholder="Todo name" class="js-name-input name-input" required;>
-        <input type="date" class="js-due-date-input" required;>
-        <button class="add-todo-button " onclick=addTodo();>Add</button>
+    <main>
 
-</div>
+     <div class="header">
+        
+        <h1>RANDOM MEAL GENERATOR</h1>
 
-    <div class="js-todo-list to-do">
+     </div>
 
-         
+     <div class="main-text">
+        
+        <p class="para">This website serves Nana to pick ideal random meal based on her  cooking skills 
+
+     </p>
+
     </div>
 
-    <script src="todo-list.js">
+        <div class="cooking" >
+
+        <img class="image" src="Meal background.jpg">
+
+        <p class="meal">წიწიბურა და მაწონი</p>
+        <p class="meal">ბრინჯი და მდნარი ყველი </p>
+        <p class="meal">Speacial Nana Dessert</p>
+        <p class="meal">შემწვარი კვერცხი</p>
+
+        </div>
 
 
-      </script>
-</body> 
+     <div class="button">
+        <button class="generate">Generate Meal</button>
+
+     </div>
+
+    </main>
+
+     <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const meals = document.querySelectorAll('.meal');
+    const button = document.querySelector('.generate');
+
+    button.addEventListener('click', () => {
+        // Hide all meals
+        meals.forEach(meal => meal.style.display = 'none');
+        
+        // Generate a random index
+        const randomIndex = Math.floor(Math.random() * meals.length);
+        
+        // Display the randomly selected meal
+        meals[randomIndex].style.display = 'block';
+    });
+});
+
+
+     </script>
+
+    
+</body>
 </html>
